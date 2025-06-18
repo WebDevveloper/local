@@ -1,0 +1,38 @@
+:root {
+  --footer-bg: #eef1f4;
+  --footer-text: #7f8c8d;
+  --footer-link: #3498db;
+  --footer-link-hover: #1f5a7a;
+}
+
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #d0d4d9;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.site-footer a {
+  color: var(--footer-link);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.2s;
+}
+.site-footer a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* Мобильный вид */
+@media (max-width: 390px) {
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+  .site-footer a {
+    display: block;
+    margin: 0.2rem 0;
+  }
+}

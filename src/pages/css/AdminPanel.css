@@ -1,0 +1,115 @@
+:root {
+  --bg-page: #f5f7fa;           /* фон страницы */  
+  --bg-section: #ffffff;        /* фон блоков */  
+  --text-main: #2c3e50;         /* основной текст */  
+  --text-muted: #7f8c8d;        /* второстепенный текст */  
+  --accent: #3498db;            /* цвет кнопок */  
+  --accent-hover: #2980b9;      /* hover-цвет */  
+  --border: #dbe2e8;            /* границы */  
+  --shadow: rgba(0, 0, 0, 0.05); /* тень блоков */  
+}
+
+/* Общий контейнер */
+.admin-panel {
+  background: var(--bg-page);
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-main);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Секции заявок и услуг */
+.admin-section {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 8px;                             /* скруглённые углы */
+  box-shadow: 0 2px 8px var(--shadow);             /* тень */          
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.4s ease-out;               /* анимация */     
+}
+.admin-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+
+
+
+
+/* Кнопки */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.1s;     /* hover-переход */ 
+}
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Форма добавления услуги */
+.add-service-form {
+  display: flex;                                   /* Flexbox для формы */ 
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.add-service-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* Таблицы */
+.admin-table {
+  width: 100%;
+   /* table-layout: fixed; */
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  /* white-space: nowrap; */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+.admin-table th {
+  background: #ecf0f1;
+  font-weight: 600;
+}
+.admin-table tr:nth-child(even) {
+  background: #f9fbfc;
+}
+
+/* Анимация появления секции */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .admin-panel { padding: 0.5rem; }
+  .admin-section { padding: 1rem; }
+  .admin-table th,
+  .admin-table td { padding: 0.5rem; font-size: 0.85rem; }
+  .add-service-form { flex-direction: column; }
+}
+@media (max-width: 390px) {
+  .btn { padding: 0.5rem; font-size: 0.8rem; }
+  .admin-table th,
+  .admin-table td { font-size: 0.8rem; }
+}

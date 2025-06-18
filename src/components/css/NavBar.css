@@ -1,0 +1,53 @@
+:root {
+  --nav-bg: #ffffff;           /* фон nav-контейнера */  
+  --nav-text: #2c3e50;         /* основной цвет текста */  
+  --nav-accent: #3498db;       /* цвет ссылок/кнопок */  
+  --nav-accent-hover: #2980b9; /* hover-цвет */  
+  --nav-border: #dfe6e9;       /* граница у элементов */  
+  --nav-shadow: rgba(0,0,0,0.05);/* лёгкая тень */  
+}
+
+/* Обёртка навигации: Flexbox-раскладка и тень */  
+nav {  
+  display: flex;                        /* горизонтальное расположение элементов */   
+  gap: 0.5rem;                          /* промежутки между ссылками */  
+  background: var(--nav-bg);            /* белый фон */  
+  padding: 0.75rem 1rem;                /* внутренние отступы */  
+  box-shadow: 0 2px 4px var(--nav-shadow);/* мягкая тень */  
+  animation: fadeIn 0.4s ease-out;      /* плавное появление */  
+}
+
+/* Ссылки и кнопки в nav */
+nav a,
+nav button {
+  display: inline-flex;                 /* для выравнивания контента */ 
+  align-items: center;                  /* вертикальное выравнивание */  
+  text-decoration: none;                /* убрать подчёркивание */  
+  color: var(--nav-accent);             /* синий акцент */  
+  background: none;                     
+  border: 1px solid var(--nav-border);  /* тонкая граница */  
+  padding: 0.5rem 0.75rem;              /* внутр. отступы */  
+  border-radius: 4px;                   /* скруглённые углы */  
+  font-size: 0.9rem;                    /* размер шрифта */  
+  cursor: pointer;                      
+  transition: background 0.2s, color 0.2s, transform 0.1s;/* плавные переходы */   
+}
+
+/* Hover-эффект для ссылок и кнопок */
+nav a:hover,
+nav button:hover {
+  background: var(--nav-accent);        /* синий фон при наведении */  
+  color: #fff;                          /* белый цвет текста */  
+  transform: translateY(-1px);          /* лёгкий подъём */  
+}
+
+/* Анимация появления nav */
+@keyframes fadeIn {
+  from { opacity: 0; }                  
+  to   { opacity: 1; }                  
+}
+
+/* Адаптивная скрываемость (если потребуется) */
+@media (max-width: 480px) {
+  nav { flex-wrap: wrap; }              /* перенос кнопок на новую строку */ 
+}
